@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ObjDetect OpenCV</string>
+    <string name="camera">Camera</string>
+</resources>
