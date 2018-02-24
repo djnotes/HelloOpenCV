@@ -1,8 +1,13 @@
 package me.mehdi.objdetectopencv;
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceView;
@@ -36,6 +41,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     private static final String TAG = "OCVSample::Activity";
+    private static final int CAMERA_REQUEST = 100;
     private int w, h;
     private CameraBridgeViewBase mOpenCvCameraView;
     TextView tvName;
@@ -76,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             }
         }
     };
+    private Context mContext;
 
     private void initializeOpenCVDependencies() throws IOException {
         mOpenCvCameraView.enableView();
@@ -113,6 +120,12 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
         setContentView(R.layout.activity_main);
+        mContext = this;
+
+        if(ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CAMERA}, CAMERA_REQUEST);
+        }
+
         mOpenCvCameraView = (CameraBridgeViewBase) findViewById(R.id.openCvView);
         mOpenCvCameraView.setVisibility(SurfaceView.VISIBLE);
         mOpenCvCameraView.setCvCameraViewListener(this);
