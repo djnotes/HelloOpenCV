@@ -28,7 +28,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
 
-public class MainActivity extends Activity implements CvCameraViewListener2 {
+public class FdActivity extends Activity implements CvCameraViewListener2 {
 
     private static final String    TAG                 = "OCVSample::Activity";
     private static final Scalar    FACE_RECT_COLOR     = new Scalar(0, 255, 0, 255);
@@ -64,7 +64,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
                     Log.i(TAG, "OpenCV loaded successfully");
 
                     // Load native library after(!) OpenCV initialization
-                    System.loadLibrary("opencv_objdetect.a");
+                    System.loadLibrary("detection_based_tracker");
 
                     try {
                         // load cascade file from application resources
@@ -107,7 +107,7 @@ public class MainActivity extends Activity implements CvCameraViewListener2 {
         }
     };
 
-    public MainActivity() {
+    public FdActivity() {
         mDetectorName = new String[2];
         mDetectorName[JAVA_DETECTOR] = "Java";
         mDetectorName[NATIVE_DETECTOR] = "Native (tracking)";

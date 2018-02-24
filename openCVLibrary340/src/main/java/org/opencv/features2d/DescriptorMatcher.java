@@ -36,18 +36,18 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::clone(emptyTrainData)
     public  DescriptorMatcher clone(boolean emptyTrainData)
     {
-        
+
         DescriptorMatcher retVal = new DescriptorMatcher(clone_0(nativeObj, emptyTrainData));
-        
+
         return retVal;
     }
 
     //javadoc: DescriptorMatcher::clone()
     public  DescriptorMatcher clone()
     {
-        
+
         DescriptorMatcher retVal = new DescriptorMatcher(clone_1(nativeObj));
-        
+
         return retVal;
     }
 
@@ -59,9 +59,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::create(descriptorMatcherType)
     public static DescriptorMatcher create(String descriptorMatcherType)
     {
-        
+
         DescriptorMatcher retVal = new DescriptorMatcher(create_0(descriptorMatcherType));
-        
+
         return retVal;
     }
 
@@ -73,9 +73,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::create(matcherType)
     public static DescriptorMatcher create(int matcherType)
     {
-        
+
         DescriptorMatcher retVal = new DescriptorMatcher(create_1(matcherType));
-        
+
         return retVal;
     }
 
@@ -87,9 +87,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::empty()
     public  boolean empty()
     {
-        
+
         boolean retVal = empty_0(nativeObj);
-        
+
         return retVal;
     }
 
@@ -101,9 +101,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::isMaskSupported()
     public  boolean isMaskSupported()
     {
-        
+
         boolean retVal = isMaskSupported_0(nativeObj);
-        
+
         return retVal;
     }
 
@@ -131,7 +131,7 @@ public class DescriptorMatcher extends Algorithm {
     {
         Mat descriptors_mat = Converters.vector_Mat_to_Mat(descriptors);
         add_0(nativeObj, descriptors_mat.nativeObj);
-        
+
         return;
     }
 
@@ -143,9 +143,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::clear()
     public  void clear()
     {
-        
+
         clear_0(nativeObj);
-        
+
         return;
     }
 
@@ -210,7 +210,7 @@ public class DescriptorMatcher extends Algorithm {
     {
         Mat matches_mat = matches;
         match_0(nativeObj, queryDescriptors.nativeObj, trainDescriptors.nativeObj, matches_mat.nativeObj, mask.nativeObj);
-        
+
         return;
     }
 
@@ -219,7 +219,7 @@ public class DescriptorMatcher extends Algorithm {
     {
         Mat matches_mat = matches;
         match_1(nativeObj, queryDescriptors.nativeObj, trainDescriptors.nativeObj, matches_mat.nativeObj);
-        
+
         return;
     }
 
@@ -234,7 +234,7 @@ public class DescriptorMatcher extends Algorithm {
         Mat matches_mat = matches;
         Mat masks_mat = Converters.vector_Mat_to_Mat(masks);
         match_2(nativeObj, queryDescriptors.nativeObj, matches_mat.nativeObj, masks_mat.nativeObj);
-        
+
         return;
     }
 
@@ -243,7 +243,7 @@ public class DescriptorMatcher extends Algorithm {
     {
         Mat matches_mat = matches;
         match_3(nativeObj, queryDescriptors.nativeObj, matches_mat.nativeObj);
-        
+
         return;
     }
 
@@ -313,9 +313,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::read(fileName)
     public  void read(String fileName)
     {
-        
+
         read_0(nativeObj, fileName);
-        
+
         return;
     }
 
@@ -327,9 +327,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::train()
     public  void train()
     {
-        
+
         train_0(nativeObj);
-        
+
         return;
     }
 
@@ -348,9 +348,9 @@ public class DescriptorMatcher extends Algorithm {
     //javadoc: DescriptorMatcher::write(fileName)
     public  void write(String fileName)
     {
-        
+
         write_0(nativeObj, fileName);
-        
+
         return;
     }
 
